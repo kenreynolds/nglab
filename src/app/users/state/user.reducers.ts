@@ -12,7 +12,5 @@ export const initialState: UserState = {
 
 export const userReducer = createReducer(
   initialState,
-  on(setUserList, (state, { users }) => {
-    return { ...state, users }
-  }),
+  on(setUserList, (state, { users }) => { return {...state, users}}),
 );

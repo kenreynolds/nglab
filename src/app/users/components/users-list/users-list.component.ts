@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { skip } from 'rxjs';
 
+import { AppState } from 'src/app/state/app.state';
 import { ProfileInterface } from 'src/app/app.model';
+import { UserActions } from '../../state/user.actions';
+import { selectUsers } from '../../state/user.selectors';
+
 import { CommonService } from 'src/app/shared/common.service';
 import { UsersService } from '../../users.service';
 
@@ -12,6 +18,10 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './users-list.component.html'
 })
 export class UsersListComponent implements OnInit {
+  // Select users slice of state
+  usersData: ReadonlyArray<ProfileInterface> = [];
+  users$ = this.store.select(selectUsers());
+
   // Font Awesome 5 icons
   faTimes = faTimes;
 
@@ -21,16 +31,19 @@ export class UsersListComponent implements OnInit {
   isLoading = false;
   shouldShowAlert = false;
 
-  users: ProfileInterface[] = [];
+  // users: any = [];
 
   constructor(
     private commonService: CommonService,
     private router: Router,
+    private store: Store<AppState>,
     private usersService: UsersService
   ) { }
 
   ngOnInit() {
-    this.fetchData();
+    this.store.dispatch({ type: UserActions.GET_USER_LIST });
+    this.users$.pipe(skip(1)).subscribe(data => this.usersData = data);
+    // this.fetchData();
   }
 
   deleteUser(userId: any) {
@@ -51,14 +64,15 @@ export class UsersListComponent implements OnInit {
       });
   }
 
-  fetchData(): void {
+  /* fetchData(): void {
     this.isLoading = true;
     this.usersService
       .getUsersData()
       .subscribe({
         next: (results: any) => {
-          this.formatCurrentActivity(results);
-          this.users = results;
+          let users = this.usersData;
+          this.formatCurrentActivity(users);
+          users = results;
           this.isLoading = false;
         },
         error: err => {
@@ -115,7 +129,7 @@ export class UsersListComponent implements OnInit {
         break;
       }
     }));
-  }
+  } */
 
   reloadPage() {
     window.location.reload();

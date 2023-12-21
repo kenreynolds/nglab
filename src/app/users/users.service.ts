@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProfileInterface } from '../app.model';
+import { catchError, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,12 @@ export class UsersService {
 
   // GET data
   getUsersData() {
-    return this.http.get(`${this.baseApi}/users`);
+    return this.http
+      .get<ProfileInterface>(`${this.baseApi}/users`)
+      .pipe(
+        tap((data: ProfileInterface) => data),
+        catchError(err => throwError(() => err))
+      );
   }
 
   // PUT Data

@@ -1,9 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { EMPTY, catchError, map, mergeMap, tap } from "rxjs";
 
-import { ProfileInterface } from "src/app/app.model";
 import { UsersService } from "../users.service";
 import { UserActions } from "./user.actions";
 
@@ -11,7 +9,6 @@ import { UserActions } from "./user.actions";
 export class UserEffects {
   constructor(
     private actions$: Actions,
-    private router: Router,
     private usersService: UsersService,
   ) { }
 

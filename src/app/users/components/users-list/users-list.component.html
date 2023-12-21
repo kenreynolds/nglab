@@ -13,7 +13,7 @@
   <h2 class="text-3xl text-slate-800 mb-8 mx-4 px-4">Users</h2>
 
   <section class="m-4">
-    <mat-expansion-panel class="mb-4" *ngFor="let user of users" hideToggle>
+    <mat-expansion-panel class="mb-4" *ngFor="let user of usersData" hideToggle>
       <mat-expansion-panel-header class="bg-slate-50">
         <mat-panel-title class="justify-between">
           <span class="font-bold pl-4 w-1/3">{{ user.firstName }} {{ user.lastName }}</span>
@@ -21,7 +21,7 @@
           <span class="flex justify-end w-1/3">
             <!-- Link to edit user profile information -->
             <button class="bg-sky-400 font-semibold text-sky-50 px-4 py-2 rounded hover:bg-sky-600">
-              <a routerLink="/user/{{user.id}}">Edit user profile</a>
+              <a routerLink="/users/user/{{user.id}}">Edit user profile</a>
             </button>
 
             <!-- Delete button -->
