@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProfileInterface } from '../app.model';
-import { catchError, tap, throwError } from 'rxjs';
+import { Observable, catchError, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,27 +12,40 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   // POST data
-  addNewUserData(newUserData: ProfileInterface) {
-    return this.http.post(`${this.baseApi}/users`, newUserData);
-  }
-
-  // DELETE data
-  deleteUserData(userId: any) {
-    return this.http.delete(`${this.baseApi}/users/${userId}`);
-  }
-
-  // GET data
-  getUsersData() {
+  addUser(user: ProfileInterface) {
     return this.http
-      .get<ProfileInterface>(`${this.baseApi}/users`)
+      .post<ProfileInterface>(`${this.baseApi}/users`, user)
       .pipe(
         tap((data: ProfileInterface) => data),
         catchError(err => throwError(() => err))
       );
   }
 
+  // DELETE data
+  deleteUserData(id: any) {
+    return this.http
+      .delete<ProfileInterface>(`${this.baseApi}/users/${id}`)
+      .pipe(
+        catchError(err => throwError(() => err))
+      );
+  }
+
+  // GET data
+  getUsers(): Observable<ProfileInterface[]> {
+    return this.http
+      .get<ProfileInterface[]>(`${this.baseApi}/users`)
+      .pipe(
+        tap((data: ProfileInterface[]) => data),
+        catchError(err => throwError(() => err))
+      );
+  }
+
   // PUT Data
-  updateUserData(updatedUserData: ProfileInterface) {
-    return this.http.put(`${this.baseApi}/users/${updatedUserData.id}`, updatedUserData);
+  updateUser(id: string, user: ProfileInterface) {
+    return this.http
+      .put<ProfileInterface>(`${this.baseApi}/users/${id}`, user)
+      .pipe(
+        catchError(err => throwError(() => err))
+      );
   }
 }

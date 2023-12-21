@@ -15,7 +15,7 @@ export class UserEffects {
   getUsers$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(UserActions.GET_USER_LIST),
-      mergeMap(() => this.usersService.getUsersData()
+      mergeMap(() => this.usersService.getUsers()
         .pipe(
           map(users => ({ type: UserActions.SET_USER_LIST, users })),
           catchError(() => EMPTY)

@@ -129,7 +129,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
   addNewUser() {
     this.isLoading = true;
     this.usersService
-      .addNewUserData(this.profileData)
+      .addUser(this.profileData)
       .subscribe({
         next: newUser => {
           console.log('Adding a new user now...');
