@@ -23,14 +23,6 @@
       "email": "tarynr@geek.com",
       "currentActivity": "reading",
       "id": 3
-    },
-    {
-      "firstName": "Jackie",
-      "lastName": "Kinslow",
-      "nickname": "MooMoo",
-      "email": "jackie@oldlady.com",
-      "currentActivity": "cleaning",
-      "id": 4
     }
   ]
 }
