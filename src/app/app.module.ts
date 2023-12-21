@@ -11,7 +11,7 @@ import { AlertsComponent } from './shared/alerts/alerts.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AddUserComponent } from './users/components/add-user/add-user.component';
 import { EditProfileComponent } from './users/components/edit-profile/edit-profile.component';
-import { UsersComponent } from './users/components/users/users.component';
+import { UsersListComponent } from './users/components/users-list/users-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -24,7 +24,7 @@ import { EffectsModule } from '@ngrx/effects';
     HeaderComponent,
     AddUserComponent,
     EditProfileComponent,
-    UsersComponent
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

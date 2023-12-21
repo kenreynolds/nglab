@@ -5,17 +5,14 @@ import { ProfileInterface } from 'src/app/app.model';
 import { CommonService } from 'src/app/shared/common.service';
 import { UsersService } from '../../users.service';
 
-import { faChevronDown, faChevronUp, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { map } from 'rxjs';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html'
+  selector: 'app-users-list',
+  templateUrl: './users-list.component.html'
 })
-export class UsersComponent implements OnInit {
+export class UsersListComponent implements OnInit {
   // Font Awesome 5 icons
-  faChevronDown = faChevronDown;
-  faChevronUp = faChevronUp;
   faTimes = faTimes;
 
   alertMessage = '';
