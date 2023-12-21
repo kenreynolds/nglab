@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "firstName": "Kenneth",
+      "lastName": "Reynolds",
+      "nickname": "Ken",
+      "email": "kenreynolds@geek.com",
+      "currentActivity": "videoGames",
+      "id": 1
+    },
+    {
+      "firstName": "Angee",
+      "lastName": "Reynolds",
+      "nickname": "GeeGee",
+      "email": "geegee@geek.com",
+      "currentActivity": "watchingClassicMovies",
+      "id": 2
+    },
+    {
+      "firstName": "Taryn",
+      "lastName": "Reynolds",
+      "nickname": "Toodles",
+      "email": "tarynr@geek.com",
+      "currentActivity": "reading",
+      "id": 3
+    },
+    {
+      "firstName": "Jackie",
+      "lastName": "Kinslow",
+      "nickname": "MooMoo",
+      "email": "jackie@oldlady.com",
+      "currentActivity": "cleaning",
+      "id": 4
+    }
+  ]
+}
