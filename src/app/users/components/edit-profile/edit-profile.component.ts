@@ -99,6 +99,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
 
   existingProfileData: ProfileInterface;
   profileData: ProfileInterface = {
+    id: 0,
     firstName: '',
     lastName: '',
     nickname: '',
@@ -135,7 +136,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   fetchData(): void {
     this.isLoading = true;
     this.usersService
-      .getUsersData()
+      .getUsers()
       .subscribe({
         next: (results: any) => {
           this.setProfileData(results);
@@ -238,6 +239,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
         const currentUserId = profileData.id?.toString();
         if (currentUserId === this.userId) {
           this.existingProfileData = {
+            id: +currentUserId,
             firstName: profileData.firstName,
             lastName: profileData.lastName,
             nickname: profileData.nickname,
@@ -390,7 +392,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
 
     this.isLoading = true;
     this.usersService
-      .updateUserData(this.profileData)
+      .updateUser(+this.userId, this.profileData)
       .subscribe({
         next: () => {
           this.showAlert('success', 'Your profile was successfully updated!');

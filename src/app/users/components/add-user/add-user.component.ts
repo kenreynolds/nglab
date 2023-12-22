@@ -97,6 +97,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
   ]
 
   profileData: ProfileInterface = {
+    id: 0,
     firstName: '',
     lastName: '',
     nickname: '',
@@ -204,6 +205,7 @@ export class AddUserComponent implements OnInit, OnDestroy {
       .valueChanges
       .subscribe(profileValueChange => {
         this.profileData = {
+          id: 0,
           firstName: profileValueChange.firstName,
           lastName: profileValueChange.lastName,
           nickname: profileValueChange.nickname,
