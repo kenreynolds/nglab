@@ -13,5 +13,5 @@ export const selectUsers: any = () => createSelector(
 // Select a user based on id
 export const selectUser = (id: number) => createSelector(
   selectUserState,
-  (state: UserState) => state.users.find(d => d.id === id)
+  (state: UserState) => state.users.find(data => data.id === id)
 );
