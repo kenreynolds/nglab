@@ -1,5 +1,5 @@
 export interface ProfileInterface {
-  id?: number;
+  id: number;
   firstName: string;
   lastName: string;
   nickname: string;

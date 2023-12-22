@@ -41,7 +41,7 @@ export class UsersService {
   }
 
   // PUT Data
-  updateUser(id: string, user: ProfileInterface) {
+  updateUser(id: number, user: ProfileInterface) {
     return this.http
       .put<ProfileInterface>(`${this.baseApi}/users/${id}`, user)
       .pipe(

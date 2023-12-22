@@ -35,7 +35,7 @@ export const modifyUserState = createAction(
 
 export const removeUserState = createAction(
   UserActions.REMOVE_USER_STATE,
-  props<{ userId: string }>(),
+  props<{ userId: number }>(),
 );
 
 export const removeAllUserState = createAction(
