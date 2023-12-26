@@ -1,27 +1,23 @@
-# NgLab
+# Angular Lab
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+Generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+
+This project serves as a front end development playground for me to experiment with various aspects of front end development and further cement my knowledge and skills in advanced Angular concepts and best practices.
+
+[Angular Material](https://v15.material.angular.io/) is used in the project, and is added via a separate material module. You can add to that module as desired.
+
+[NgRx](https://ngrx.io/) is used for UI state management.
+
+[TailwindCSS](https://tailwindcss.com/) is used for quick, easy styling of various UI elements.
+Update 12/26/2023: I am currently researching ways to more easily integrate and use TailwindCSS with Angular Material. Expect to see some changes regarding that in the near future.
+
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm run dev:server` to start the json-server mock backend. Dummy data has been added to db.json, but you can change it to suit your needs.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
