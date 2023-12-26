@@ -1,35 +1,35 @@
 {
   "users": [
     {
-      "firstName": "Kenneth",
-      "lastName": "Reynolds",
-      "nickname": "Ken",
-      "email": "kenreynolds@geek.com",
-      "currentActivity": "Coding!",
+      "firstName": "Tony",
+      "lastName": "Stark",
+      "nickname": "Iron Man",
+      "email": "tonystark@avengers.com",
+      "currentActivity": "Being a genius",
       "id": 1
     },
     {
-      "firstName": "Angee",
-      "lastName": "Reynolds",
-      "nickname": "GeeGee",
-      "email": "geegee@geegee.com",
-      "currentActivity": "Watching TCM",
+      "firstName": "Natasha",
+      "lastName": "Romanoff",
+      "nickname": "Black Widow",
+      "email": "nat@avengers.com",
+      "currentActivity": "Spy stuff",
       "id": 2
     },
     {
-      "firstName": "Taryn",
-      "lastName": "Reynolds",
-      "nickname": "Toodles",
-      "email": "tarynr@toodles.com",
-      "currentActivity": "Reading",
+      "firstName": "Bruce",
+      "lastName": "Banner",
+      "nickname": "Hulk",
+      "email": "strongestavenger@avengers.com",
+      "currentActivity": "Hulking out!",
       "id": 3
     },
     {
-      "firstName": "Jackie",
-      "lastName": "Kinslow",
-      "nickname": "MooMoo",
-      "email": "jackie@oldlady.com",
-      "currentActivity": "Cleaning",
+      "firstName": "Thor",
+      "lastName": "Odinson",
+      "nickname": "Point Break",
+      "email": "thor@avengers.com",
+      "currentActivity": "Being mighty",
       "id": 4
     }
   ]

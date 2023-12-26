@@ -29,6 +29,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
+db-local.json
 /15.2.4/
 /.angular/cache
 .sass-cache/
