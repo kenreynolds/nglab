@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
 import { User } from '../../models/user.interface';
-
 import { CommonService } from 'src/app/shared/common.service';
-
 import { ViewActions } from '../../enums/view-actions.enum';
 
 @Component({
