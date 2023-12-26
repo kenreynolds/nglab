@@ -6,10 +6,12 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Override default Angular Material styles */
-.mat-column-actions { width: 225px; }
+.mat-column-actions { width: 132px; }
 
 .mat-expansion-panel { margin-bottom: 12px !important; }
 .mat-expansion-panel-header { padding: 0 !important; }
 .mat-expansion-panel-header-title { margin-right: 0 !important; }
+
+.mat-icon { font-size: 20px; margin-top: 4px; }
 
 .mat-typography h1 { margin: 0; padding: 0; }
