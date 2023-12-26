@@ -1,13 +1,26 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AddUserComponent } from "./components/add-user/add-user.component";
-import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
-import { UsersListComponent } from "./components/users-list/users-list.component";
+import { FormComponent } from "./pages/form/form.component";
+import { ListComponent } from "./pages/list/list.component";
 
 const routes: Routes = [
-  { path: '', component: UsersListComponent },
-  { path: 'add-user', component: AddUserComponent },
-  { path: 'user/:id', component: EditProfileComponent },
+  {
+    path: '',
+    component: ListComponent
+  },
+  {
+    path: 'manage',
+    children: [
+      {
+        path: '',
+        component: FormComponent,
+      },
+      {
+        path: ':id',
+        component: FormComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({

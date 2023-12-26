@@ -1,9 +1,9 @@
 import { createReducer, on } from "@ngrx/store";
-import { ProfileInterface } from "src/app/app.model";
+import { User } from "../models/user.interface";
 import { addUserState, modifyUserState, removeAllUserState, removeUserState, setUserList } from "./user.actions";
 
 export interface UserState {
-  users: ReadonlyArray<ProfileInterface>;
+  users: ReadonlyArray<User>;
 };
 
 export const initialState: UserState = {

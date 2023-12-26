@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { ProfileInterface } from "src/app/app.model";
+import { User } from "../models/user.interface";
 
 export enum UserActions {
   GET_USER_LIST = '[User] Get User list',
@@ -20,17 +20,17 @@ export const getUserList = createAction(
 
 export const setUserList = createAction(
   UserActions.SET_USER_LIST,
-  props<{ users: ReadonlyArray<ProfileInterface> }>(),
+  props<{ users: ReadonlyArray<User> }>(),
 );
 
 export const addUserState = createAction(
   UserActions.ADD_USER_STATE,
-  props<{ user: ProfileInterface }>(),
+  props<{ user: User }>(),
 );
 
 export const modifyUserState = createAction(
   UserActions.MODIFY_USER_STATE,
-  props<{ user: ProfileInterface }>(),
+  props<{ user: User }>(),
 );
 
 export const removeUserState = createAction(

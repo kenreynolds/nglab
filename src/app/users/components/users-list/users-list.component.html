@@ -1,4 +1,4 @@
-<div class="absolute bg-black opacity-75 flex justify-center items-center h-screen w-screen m-0 left-0 top-0 z-20"
+<!-- <div class="absolute bg-black opacity-75 flex justify-center items-center h-screen w-screen m-0 left-0 top-0 z-20"
   *ngIf="isLoading"
 >
   <div class="animate-spin inline-block w-12 h-12 border-[3px] border-current border-t-transparent text-sky-600
@@ -7,24 +7,68 @@
     aria-label="loading"
   ><span class="sr-only">Loading...</span>
   </div>
-</div>
+</div> -->
 
-<div class="container mx-auto lg:px-64 sm:px-4 py-4">
+<div class="container mx-auto p-8 sm:px-0 lg:px-4">
   <h2 class="text-3xl text-slate-800 mb-8 mx-4 px-4">Users</h2>
 
   <section class="m-4">
-    <mat-expansion-panel class="mb-4" *ngFor="let user of usersData" hideToggle>
+    <table mat-table [dataSource]="users" class="mat-elevation-z6">
+      <!-- Data for table columns -->
+      <ng-container *ngFor="let item of headers" [matColumnDef]="item.fieldName">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ item.headerName }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element[item.fieldName] }}
+        </td>
+      </ng-container>
+
+      <!-- Actions for specific item -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="flex justify-between">
+            <button (click)="selectUser(element, 0)"
+              class="flex justify-center items-center px-4 py-2 w-3/4
+              bg-sky-400 rounded text-sky-50 hover:bg-sky-600"
+            ><fa-icon class="mr-1"
+              [icon]="faEdit"
+            ></fa-icon> View
+            </button>
+
+            <button (click)="selectUser(element, 1)"
+              class="flex justify-center items-center ml-4 px-4 py-2 w-1/4
+              bg-red-400 rounded text-white hover:bg-red-500"
+            ><fa-icon
+              [icon]="faTrash"
+            ></fa-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr
+        mat-header-row
+        *matHeaderRowDef="headerFields"
+      ></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: headerFields"
+      ></tr>
+    </table>
+
+    <!-- Old code; uses Material Expansion Panel -->
+    <!-- <mat-expansion-panel class="mb-4" *ngFor="let user of usersData" hideToggle>
       <mat-expansion-panel-header class="bg-slate-50">
         <mat-panel-title class="justify-between">
           <span class="font-bold pl-4 w-1/3">{{ user.firstName }} {{ user.lastName }}</span>
           <span class="w-1/3">{{ user.email }}</span>
           <span class="flex justify-end w-1/3">
-            <!-- Link to edit user profile information -->
             <button class="bg-sky-400 font-semibold text-sky-50 px-4 py-2 rounded hover:bg-sky-600">
               <a routerLink="/users/user/{{user.id}}">Edit user profile</a>
             </button>
 
-            <!-- Delete button -->
             <button
               class="flex justify-center items-center ml-4 px-4 py-2
               bg-red-400 rounded text-white hover:bg-red-600"
@@ -45,6 +89,6 @@
       <p>
         <span class="font-semibold">Current activity: </span>{{ user.currentActivity }}
       </p>
-    </mat-expansion-panel>
+    </mat-expansion-panel> -->
   </section>
 </div>

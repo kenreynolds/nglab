@@ -3,9 +3,9 @@ import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { EMPTY, catchError, forkJoin, map, mergeMap, tap } from "rxjs";
 
-import { UsersService } from "../users.service";
+import { UsersService } from "../services/users.service";
 import { UserActions } from "./user.actions";
-import { ProfileInterface } from "src/app/app.model";
+import { User } from "../models/user.interface";
 
 @Injectable()
 export class UserEffects {
@@ -19,7 +19,7 @@ export class UserEffects {
   addUser$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(UserActions.ADD_USER_API),
-      mergeMap((data: { type: string, payload: ProfileInterface}) => this.usersService.addUser(data.payload)
+      mergeMap((data: { type: string, payload: User}) => this.usersService.addUser(data.payload)
         .pipe(
           map(users => ({ type: UserActions.ADD_USER_STATE, user: data.payload })),
           tap(() => this.router.navigate(['users'])),
@@ -69,7 +69,7 @@ export class UserEffects {
   updateUser$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(UserActions.MODIFY_USER_API),
-      mergeMap((data: { type: number, payload: ProfileInterface}) => this.usersService.updateUser(
+      mergeMap((data: { type: number, payload: User}) => this.usersService.updateUser(
         data.payload.id, data.payload
       ).pipe(
         map(users => ({ type: UserActions.MODIFY_USER_STATE, user: data.payload })),
