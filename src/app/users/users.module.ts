@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-
 import { userReducer } from './state/user.reducers';
-import { UserEffects } from './state/user.effects';
-
+import { UserEffects } from './state/user.effects'
 import { MaterialModule } from '../material/material.module';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersListComponent } from './components/users-list/users-list.component';

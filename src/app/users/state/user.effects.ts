@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { EMPTY, catchError, forkJoin, map, mergeMap, tap } from "rxjs";
-
 import { UsersService } from "../services/users.service";
 import { UserActions } from "./user.actions";
 import { User } from "../models/user.interface";

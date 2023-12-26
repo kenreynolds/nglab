@@ -31,6 +31,14 @@
       "email": "thor@avengers.com",
       "currentActivity": "Being mighty",
       "id": 4
+    },
+    {
+      "firstName": "Steve",
+      "lastName": "Rogers",
+      "nickname": "Captain America",
+      "email": "capcicle@avengers.com",
+      "currentActivity": "Catching up",
+      "id": 5
     }
   ]
 }
