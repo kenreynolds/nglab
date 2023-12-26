@@ -4,7 +4,6 @@ import { User } from '../../models/user.interface';
 
 import { CommonService } from 'src/app/shared/common.service';
 
-import { faEdit, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ViewActions } from '../../enums/view-actions.enum';
 
 @Component({
@@ -16,11 +15,6 @@ export class UsersListComponent implements OnInit {
   @Input() users: ReadonlyArray<User> = [];
   @Output() user = new EventEmitter<{ user: User, action: ViewActions }>();
   headerFields: string[] = [];
-
-  // Font Awesome 5 icons
-  faEdit = faEdit;
-  faTimes = faTimes;
-  faTrash = faTrash;
 
   alertMessage = '';
   alertType = '';
