@@ -30,18 +30,22 @@
         <th mat-header-cell *matHeaderCellDef>Actions</th>
         <td mat-cell *matCellDef="let element">
           <div class="flex justify-between">
-            <button (click)="selectUser(element, 0)"
+            <button
+              mat-raised-button
+              (click)="selectUser(element, 0)"
               class="flex justify-center items-center px-2 py-1
-              bg-sky-400 rounded text-sky-50 hover:bg-sky-600"
-            ><mat-icon class="mr-1">
+              bg-sky-500 rounded text-sky-50 hover:bg-sky-600"
+            ><mat-icon class="m-0">
               edit_square
             </mat-icon>
             </button>
 
-            <button (click)="selectUser(element, 1)"
+            <button
+              mat-raised-button
+              (click)="selectUser(element, 1)"
               class="flex justify-center items-center ml-4 px-2 py-1
-              bg-red-400 rounded text-white hover:bg-red-500"
-            ><mat-icon>
+              bg-red-500 rounded text-white hover:bg-red-600"
+            ><mat-icon class="m-0">
               delete
             </mat-icon>
             </button>
