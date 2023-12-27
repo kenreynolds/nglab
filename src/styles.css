@@ -7,5 +7,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Override default Angular Material styles */
 .mat-column-actions { width: 132px; }
+
 .mat-icon { font-size: 20px; margin-top: 4px; }
+.mat-icon.accounts {
+  height: 36px;
+  font-size: 36px;
+  width: 36px
+}
+
 .mat-typography h1 { margin: 0; padding: 0; }

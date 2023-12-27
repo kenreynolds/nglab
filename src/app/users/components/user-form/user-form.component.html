@@ -17,9 +17,23 @@
 
 <div class="container mx-auto lg:px-64 sm:px-4 flex flex-col items-start justify-center pb-5">
   <mat-card class="form-card w-full">
-    <h2 class="text-2xl pb-2 ml-4 mt-4 px-4">
-      {{ selectedUser ? 'Update/View user' : 'Create a new user' }}
-    </h2>
+    <div class="flex items-center justify-between">
+      <h2 class="text-2xl pb-2 ml-4 mt-4">
+        {{ selectedUser ? 'Update/View user' : 'Create a new user' }}
+      </h2>
+
+      <a
+        routerLink="/users"
+        class="flex items-center justify-end pr-12"
+      >
+        <mat-icon>
+          arrow_back
+        </mat-icon><span
+          class="hover:underline hover:underline-offset-4"
+        >Back to users
+        </span>
+      </a>
+    </div>
 
     <!-- Add user form -->
     <form class="flex flex-col mx-4 pr-8" [formGroup]="userForm">
