@@ -9,7 +9,6 @@ This project serves as a front end development playground for me to experiment w
 [NgRx](https://ngrx.io/) is used for UI state management.
 
 [TailwindCSS](https://tailwindcss.com/) is used for quick, easy styling of various UI elements.
-Update 12/26/2023: I am currently researching ways to more easily integrate and use TailwindCSS with Angular Material. Expect to see some changes regarding that in the near future.
 
 
 ## Development server
