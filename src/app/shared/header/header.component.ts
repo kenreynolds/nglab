@@ -10,13 +10,11 @@ export class HeaderComponent {
 
   toggleColorMode(e: any) {
     const { target } = e;
-    const iconValue: string = target.dataset.matIconName;
+    const iconValue: string = target!.dataset.matIconName;
 
-    if (target) {
-      this.colorMode.emit(iconValue);
-      iconValue === 'dark_mode'
-        ? this.colorModeIcon = 'light_mode'
-        : this.colorModeIcon = 'dark_mode';
-    }
+    this.colorMode.emit(iconValue);
+    iconValue === 'dark_mode'
+      ? this.colorModeIcon = 'light_mode'
+      : this.colorModeIcon = 'dark_mode';
   }
 }

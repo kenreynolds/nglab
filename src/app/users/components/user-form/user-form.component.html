@@ -16,7 +16,7 @@
 ></app-alerts> -->
 
 <div class="container mx-auto lg:px-64 sm:px-4 flex flex-col items-start justify-center pb-5">
-  <mat-card class="form-card w-full">
+  <mat-card class="form-card w-full dark:bg-slate-500 dark:text-slate-50">
     <div class="flex items-center justify-between">
       <h2 class="text-2xl pb-2 ml-4 mt-4">
         {{ selectedUser ? 'Update/View user' : 'Create a new user' }}
@@ -42,14 +42,19 @@
         <!-- First name -->
         <mat-form-field class="flex flex-col mb-4">
           <mat-label class="mb-1">First name</mat-label>
-          <input matInput formControlName="firstName" class="form-input rounded"
+          <input
+            matInput
+            formControlName="firstName"
             placeholder="Ex. John"
+            class="form-input rounded"
           />
 
           <!-- Error handling -->
           <mat-error *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
-            <span *ngIf="firstName?.errors?.['required']"
-              class="text-red-500 m-0 pt-2">First name is required
+            <span
+              *ngIf="firstName?.errors?.['required']"
+              class="text-red-500 m-0 pt-2 dark:text-red-400"
+            >First name is required
             </span>
           </mat-error>
         </mat-form-field>
@@ -63,8 +68,10 @@
 
           <!-- Error handling -->
           <mat-error *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
-            <span *ngIf="lastName?.errors?.['required']"
-              class="text-red-500 m-0 pt-2">Last name is required
+            <span
+              *ngIf="lastName?.errors?.['required']"
+              class="text-red-500 m-0 pt-2 dark:text-red-400"
+            >Last name is required
             </span>
           </mat-error>
         </mat-form-field>
@@ -87,8 +94,10 @@
             <span *ngIf="email?.errors?.['required']"
               class="text-red-500 m-0 pt-2">Email is required
             </span>
-            <span *ngIf="email?.errors?.['email']"
-              class="text-red-500 m-0 pt-2">Email must be in "example@example.com" format
+            <span
+              *ngIf="email?.errors?.['email']"
+              class="text-red-500 m-0 pt-2 dark:text-red-400"
+            >Email must be in "example@example.com" format
             </span>
           </mat-error>
         </mat-form-field>
