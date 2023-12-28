@@ -2,26 +2,35 @@
   <div class="container mx-auto sm:px-0 lg:px-4 flex justify-between items-center">
     <h1 class="text-3xl m-0 p-0">Angular Lab</h1>
 
-    <button [matMenuTriggerFor]="menu">
-      <mat-icon class="accounts">
-        manage_accounts
-      </mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button
-        mat-menu-item
-        class="pl-8"
-      ><a routerLink="/users">
-        Users
-      </a>
+    <div class="flex items-center">
+      <button class="mr-20" (click)="toggleColorMode($event)">
+        <mat-icon
+          [fontIcon]="colorModeIcon"
+          class="color-toggle"
+        ></mat-icon>
       </button>
-      <button
-        mat-menu-item
-        class="pl-8"
-      ><a routerLink="/users/manage">
-        Add User
-      </a>
+
+      <button [matMenuTriggerFor]="menu">
+        <mat-icon class="accounts">
+          manage_accounts
+        </mat-icon>
       </button>
-    </mat-menu>
+      <mat-menu #menu="matMenu">
+        <button
+          mat-menu-item
+          class="pl-8"
+        ><a routerLink="/users">
+          Users
+        </a>
+        </button>
+        <button
+          mat-menu-item
+          class="pl-8"
+        ><a routerLink="/users/manage">
+          Add User
+        </a>
+        </button>
+      </mat-menu>
+    </div>
   </div>
 </mat-toolbar>

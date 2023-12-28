@@ -14,5 +14,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 36px;
   width: 36px
 }
+.mat-icon.color-toggle {
+  height: 28px;
+  font-size: 28px;
+  width: 28px
+}
 
 .mat-typography h1 { margin: 0; padding: 0; }
